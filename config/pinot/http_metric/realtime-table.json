@@ -1,0 +1,37 @@
+{
+  "tableName": "http_metric",
+  "tableType": "REALTIME",
+
+  "tenants": {
+    "broker": "DefaultTenant",
+    "server": "DefaultTenant"
+  },
+
+  "segmentsConfig": {
+    "timeColumnName": "timestamp",
+    "schemaName": "http_metric",
+    "replication": "1",
+    "replicasPerPartition": "1"
+  },
+
+  "tableIndexConfig": {
+    "loadMode": "MMAP"
+  },
+
+  "ingestionConfig": {
+    "streamIngestionConfig": {
+      "streamConfigMaps": [
+        {
+          "streamType": "kafka",
+          "stream.kafka.topic.name": "http-metric",
+          "stream.kafka.broker.list": "kafka:29092",
+
+          "stream.kafka.consumer.type": "lowlevel",
+          "stream.kafka.consumer.prop.offset.criteria": "smallest",
+
+          "stream.kafka.decoder.class.name": "org.apache.pinot.plugin.stream.kafka.KafkaJSONMessageDecoder"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tableName": "http_metric",
+  "tableType": "OFFLINE",
+  "tenants": {
+    "broker": "DefaultTenant",
+    "server": "DefaultTenant"
+  },
+  "segmentsConfig": {
+    "timeColumnName": "timestamp",
+    "timeType": "MILLISECONDS",
+    "schemaName": "http_metric",
+    "replication": "1",
+    "replicasPerPartition": "1"
+  },
+  "tableIndexConfig": {
+    "loadMode": "MMAP"
+  },
+  "ingestionConfig": {
+    "batchIngestionConfig": {
+      "segmentIngestionType": "APPEND",
+      "inputDirURI": "s3://pinot/",
+      "inputFormat": "csv",
+      "csvFormat": {
+        "hasHeader": true
+      }
+    }
+  }
+}

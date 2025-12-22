@@ -1,0 +1,24 @@
+server:
+  port: 8180
+
+logging:
+  level:
+    root: WARN
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+storage:
+  strategy: ${STORAGE_STRATEGY:s3}
+  s3:
+    base-url: ${MINIO_BASE_URL:http://localhost:9400}
+    bucket: ${MINIO_BUCKET_NAME:pinot}
+    credentials:
+      access-key: ${MINIO_ACCESS_KEY:admin}
+      secret-key: ${MINIO_SECRET_KEY:admin123}
+  avatar:
+    path: avatars

@@ -1,0 +1,21 @@
+{
+  "schemaName": "http_metric",
+
+  "dimensionFieldSpecs": [
+    { "name": "path", "dataType": "STRING" },
+    { "name": "status", "dataType": "INT" }
+  ],
+
+  "metricFieldSpecs": [
+    { "name": "duration", "dataType": "LONG" }
+  ],
+
+  "dateTimeFieldSpecs": [
+    {
+      "name": "timestamp",
+      "dataType": "LONG",
+      "format": "1:MILLISECONDS:EPOCH",
+      "granularity": "1:MILLISECONDS"
+    }
+  ]
+}
