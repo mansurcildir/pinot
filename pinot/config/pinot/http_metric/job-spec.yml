@@ -1,4 +1,0 @@
-tableName: http_metric
-inputDirURI: s3://pinot/
-inputFormat: csv
-segmentIngestionType: APPEND

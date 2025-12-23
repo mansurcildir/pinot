@@ -8,11 +8,12 @@ import org.jetbrains.annotations.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import static com.example.pinot.util.Constant.HTTP_METRIC;
+
 @Component
 @RequiredArgsConstructor
 public class MetricsInterceptor implements HandlerInterceptor {
 
-    private static final @NotNull String HTTP_METRIC = "http-metric";
     private final @NotNull HttpMetricProducer httpMetricProducer;
 
     @Override

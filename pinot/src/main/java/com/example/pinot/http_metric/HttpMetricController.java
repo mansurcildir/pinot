@@ -15,13 +15,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;
 
+import static com.example.pinot.util.Constant.PATH;
+
 @RestController
 @RequestMapping("/http-metric")
 @RequiredArgsConstructor
 public class HttpMetricController {
 
     private final @NotNull StorageStrategy storageStrategy;
-    private static final @NotNull String PATH = "/http-metric/http-metric.csv";
 
     @GetMapping("/hello")
     public @NotNull String hello() {
