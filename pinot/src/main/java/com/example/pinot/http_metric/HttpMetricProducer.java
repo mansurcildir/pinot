@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class HttpMetricProducer {
 
-    private final @NotNull KafkaTemplate<String, Object> kafkaTemplate;
+  private final @NotNull KafkaTemplate<String, Object> kafkaTemplate;
 
-    public void sendMessage(final @NotNull String topic, final @NotNull HttpMetric metric) {
-        this.kafkaTemplate.send(topic, metric);
-    }
+  public void sendMessage(final @NotNull String topic, final @NotNull HttpMetric metric) {
+    this.kafkaTemplate.send(topic, metric);
+  }
 }
